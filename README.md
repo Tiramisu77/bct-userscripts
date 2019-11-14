@@ -1,6 +1,6 @@
 ## Bitcointalk userscripts
 
-#### displayEmerit
+### displayEmerit
 
 Shows earned merit below total merit score for every poster inside a thread. Earned merit scores provided by a third-party API.
 
