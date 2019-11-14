@@ -6,9 +6,9 @@
 // @run-at         document-end
 // ==/UserScript==
 
-(function() {
+;(function() {
     //maximum quote height in pixels
-    const MAX_QUOTE_HEIGHT = 1200
+    const MAX_QUOTE_HEIGHT = window.innerHeight * 0.9
 
     const scriptName = "__removeGiantQuotes__"
 
@@ -16,19 +16,19 @@
         return
     }
 
-    document.querySelectorAll(".post > .quote").forEach(quote => {
-        if (quote.offsetHeight > MAX_QUOTE_HEIGHT) {
-            quote.style.display = "none"
+    for (const quote of document.querySelectorAll(".post > .quote")) {
+        if (quote.scrollHeight > MAX_QUOTE_HEIGHT) {
+            quote.hidden = true
             let btn = document.createElement("button")
             btn.textContent = "show oversized quote"
             btn.addEventListener("click", event => {
-                quote.style.display = quote.style.display === "none" ? "block" : "none"
+                quote.hidden = !quote.hidden
                 btn.textContent = quote.style.display === "none" ? "show oversized quote" : "hide oversized quote"
                 event.preventDefault()
             })
             quote.parentElement.insertBefore(btn, quote)
         }
-    })
+    }
 
     document[scriptName] = true
 })()
