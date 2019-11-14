@@ -1,6 +1,6 @@
 ## Bitcointalk userscripts
 
-#### [displayEmerit](https://github.com/Tiramisu77/bct-userscripts/raw/master/scripts/displayEmerit.user.js)
+### [displayEmerit](https://github.com/Tiramisu77/bct-userscripts/raw/master/scripts/displayEmerit.user.js)
 
 Shows earned merit below total merit score for every poster inside a thread. Earned merit scores provided by a third-party API.
 
